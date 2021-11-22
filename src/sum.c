@@ -17,13 +17,37 @@ int sum (int n)
 
 /* Sum integers 1 to n */
 int sumtail (int n, int total)
+
+//Tn this funktion we use a 2nd integer to make a tail recursive funktion.
+//The 2nd integer "total" is counting the total so we dont have to fill our memorry.
+
 {
-    return 0;
+  if (n==1)
+  {
+    return n+total;
+  }
+  else
+  {
+    return sumtail(n-1, n+total);
+  }
 }
 
 /* Sum integers 1 to n */
 int sumwhile (int n)
-{
-  return 0;
-}
 
+//This is the sum of n integers starting from 1.
+//Im using two help integers to calculate the sum because i count up from 1.
+//If you count down from n you can use a single teporerry integer.
+
+{
+  int t=1;
+  int p=0;
+
+  while (t<=n)
+  {
+    p=p+t;
+    t++;
+  }
+  
+  return p;
+}
